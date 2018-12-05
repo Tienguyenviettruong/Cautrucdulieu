@@ -49,7 +49,7 @@ public:
 		{cout<<item[i]<<"";}
 	}
 	void insert(int index, item_type newItem)
-	{	if(index<0 && index> size) 
+	{	if(index<0 || index> size) 
 			cout<<"loi"<<endl;
 		else{
 			for(int i = size; i>=index; i--)
@@ -69,7 +69,7 @@ public:
 		if(size == 0) return true; else return false;
 	}
 	item_type retrieve(int index){
-		if (index< 0 && index> size)
+		if (index< 0 || index> size)
 			cout<<"vi tri ko hop le"<<endl;
 		else
 			return item[index-1];
