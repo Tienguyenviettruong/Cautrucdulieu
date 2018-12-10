@@ -133,7 +133,7 @@ template<class T>
 int list<T>::getSize() { return size; }
 int main()
 {
-	list alist;
+	list<int> alist;
 	/*alist.push_back(3);
 	alist.push_front(56);
 	alist.push_front(7);
