@@ -63,7 +63,23 @@ public:
 			cur = cur->next;
 		}
 	}
-	void Insert()
+		void Insert(item_type newItem, int index){
+		node *NewNode = new node();
+		NewNode->item = newItem;
+		node* pre = find(index - 1);
+		node* cur = pre->next;
+		pre->next = NewNode;
+		NewNode->next = cur;
+		size++;
+	}
+	void Remove(int index){
+		node *pre = find(index - 1);
+		node*del = pre->next;
+		node*cur = del->next;
+		pre->next = cur;
+		del->next = NULL;
+		size--;
+	}
 };
 
 
