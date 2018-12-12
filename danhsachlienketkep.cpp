@@ -9,7 +9,7 @@ typedef struct List{
   Node *Head;
   Node *Tail;
 };
-Void CreatList(List &alist){
+void CreatList(List &alist){
   alist.Head = alist.Tail = NULL;
 }
 Node *q(item a){
