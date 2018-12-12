@@ -1,59 +1,38 @@
 #include<iostream>
 using namespace std;
-class Stack 
-{ 
-int top; 
-public: 
-    int a[MAX];    
-  
-    Stack()  { top = -1; } 
-    bool push(int x); 
-    int pop(); 
-    bool isEmpty(); 
-}; 
-  
-bool Stack::push(int x) 
-{ 
-    if (top >= (MAX-1)) 
-    { 
-        cout << "Stack Overflow"; 
-        return false; 
-    } 
-    else
-    { 
-        a[++top] = x; 
-        cout<<x <<" pushed into stack\n"; 
-        return true; 
-    } 
-} 
-  
-int Stack::pop() 
-{ 
-    if (top < 0) 
-    { 
-        cout << "Stack Underflow"; 
-        return 0; 
-    } 
-    else
-    { 
-        int x = a[top--]; 
-        return x; 
-    } 
-} 
-  
-bool Stack::isEmpty() 
-{ 
-    return (top < 0); 
-} 
-  
-// Driver program to test above functions 
-int main() 
-{ 
-    struct Stack s; 
-    s.push(10); 
-    s.push(20); 
-    s.push(30); 
-    cout<<s.pop() << " Popped from stack\n"; 
-  
-    return 0; 
-} 
+typedef int item_type;
+class stack{
+private:
+	struct node{
+		item_type item;
+		node *next
+	};
+	node *top;
+	int size;
+public:
+	stack(){ top = NULL; size = 0; }
+	void push(item_type newItem){
+		node *q = new node();
+		q->item = newIten;
+		node *cur = top;
+		top = q;
+		q->next = cur;
+		size++;
+	}
+	void pop(){
+		node *del = top;
+		top=top->next;
+		del->next = NULL;
+		delete del;
+		size--;
+	}
+	void pop(item_type &popItem){
+		node *del = top;
+		top = top->next;
+		popItem = del->item;
+		del->next = NULL;
+		delete del;
+		size--;
+	}
+	item_type gettop()// truy xuaats gia tri tai dinh stack
+};
