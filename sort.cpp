@@ -18,7 +18,7 @@ void InsertSort (int arr[],int n)
    for(int i=1;i<n;i++)
    {
      j=i-1;
-     temp=a[i];
+     temp=arr[i];
      while(j>=0 && t<arr[j])
      {
        arr[j+1]=arr[j];
