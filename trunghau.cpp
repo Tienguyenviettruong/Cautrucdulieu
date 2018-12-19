@@ -185,6 +185,35 @@ int main()
 	for (int k = 0; k < j; k++)
 		cout << kq[k];
 	cout << endl;
+	// tinh toan
+	a[100] = "52|7*8+";
+	int tong = 0;
+	for (int i = 0; i < strlen(a); i++)
+	{
+		if (a[i]>='0' && a[i]<='9')
+		{	
+			tong = tong*10 + (a[i] - '0');
+		}
+		else
+		{
+			s.Push(tong);
+			tong = 0;
+			if (s.Get())
+			{ 
+				int s2 = s.Pop();
+				int s1 = s.Pop();
+				if (a[i] == '+')
+					s.Push(s1+s2);
+				if (a[i] == '-')
+					s.Push(s1-s2);
+				if (a[i] == '*')
+					s.Push(s1*s2);
+				if (a[i] == '/')
+					s.Push(s1/s2);
+			}
+		}
+	}
+	cout<<s.Pop()<<endl;
 	system("pause");
 	return 0;
 }
